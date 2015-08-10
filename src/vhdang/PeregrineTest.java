@@ -10,6 +10,9 @@ package vhdang;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import org.erasmusmc.data_mining.ontology.api.Concept;
 import org.erasmusmc.data_mining.ontology.api.Language;
 import org.erasmusmc.data_mining.ontology.api.Ontology;
@@ -49,9 +52,10 @@ public class PeregrineTest {
      * Print the indexing results that Peregrine returns.
      */
     private void printIndexingResults() {
+    	 
         // The ontology file format is described here:
         // https://trac.nbic.nl/data-mining/wiki/ErasmusMC%20ontology%20file%20format
-        final String ontologyPath = "../test.ontology"; // EDIT HERE
+        final String ontologyPath = "/Volumes/Data/ErasmusMC/peregrinetest/src/test.ontology"; // EDIT HERE
         final Ontology ontology = new SingleFileOntologyImpl(ontologyPath);
 
         final String propertiesDirectory = "/Volumes/Data/ErasmusMC/lvg2013lite/data/config/"; // EDIT HERE
@@ -73,6 +77,7 @@ public class PeregrineTest {
             final String preferredLabelText = LabelTypeComparator.getPreferredLabel(concept.getLabels()).getText();
             System.out.println("  Preferred concept label is: \"" + preferredLabelText + "\".");
         }
+    	 
     }
 
     /**
